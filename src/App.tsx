@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 
@@ -165,6 +166,29 @@ function App() {
           >
             คลิกที่นี่ ({count} ครั้ง)
           </button>
+          
+          <Link 
+            to="/home"
+            style={{
+              width: '100%',
+              background: 'linear-gradient(45deg, #4ecdc4, #44a08d)',
+              color: 'white',
+              fontWeight: 'bold',
+              fontSize: '18px',
+              padding: '15px 30px',
+              border: 'none',
+              borderRadius: '12px',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              boxShadow: '0 8px 16px rgba(0,0,0,0.2)',
+              marginBottom: '20px',
+              textDecoration: 'none',
+              display: 'block',
+              textAlign: 'center'
+            }}
+          >
+            🏠 ไปยังหน้าหลัก
+          </Link>
           
           <div style={{
             padding: '15px',
