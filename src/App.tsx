@@ -7,13 +7,11 @@ function App() {
   const [count, setCount] = useState(0)
 
   const handleMouseOver = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.style.transform = 'translateY(-2px)';
-    e.currentTarget.style.boxShadow = '0 12px 24px rgba(0,0,0,0.3)';
+    e.currentTarget.style.transform = 'scale(1.05)'
   }
 
   const handleMouseOut = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.style.transform = 'translateY(0)';
-    e.currentTarget.style.boxShadow = '0 8px 16px rgba(0,0,0,0.2)';
+    e.currentTarget.style.transform = 'scale(1)'
   }
 
   return (
@@ -111,39 +109,47 @@ function App() {
         <div style={{
           backgroundColor: 'rgba(255, 255, 255, 0.95)',
           borderRadius: '20px',
-          padding: '30px',
+          padding: '40px',
           maxWidth: '400px',
           width: '100%',
           boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
           textAlign: 'center',
           backdropFilter: 'blur(10px)'
         }}>
-          <div style={{ marginBottom: '25px' }}>
-            <div style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: '60px',
-              height: '60px',
-              background: 'linear-gradient(45deg, #667eea, #764ba2)',
-              borderRadius: '50%',
-              marginBottom: '15px',
-              color: 'white',
-              fontSize: '24px',
-              fontWeight: 'bold',
-              boxShadow: '0 8px 16px rgba(0,0,0,0.2)'
-            }}>
-              {count}
-            </div>
-            <h3 style={{
-              fontSize: '22px',
-              fontWeight: 'bold',
-              color: '#333',
-              margin: '0'
-            }}>
-              ตัวนับคลิก
-            </h3>
+          <div style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '80px',
+            height: '80px',
+            background: 'linear-gradient(45deg, #667eea, #764ba2)',
+            borderRadius: '50%',
+            marginBottom: '20px',
+            fontSize: '36px',
+            color: 'white',
+            fontWeight: 'bold',
+            boxShadow: '0 8px 16px rgba(0,0,0,0.2)'
+          }}>
+            {count}
           </div>
+          
+          <h2 style={{
+            fontSize: '28px',
+            fontWeight: 'bold',
+            color: '#333',
+            marginBottom: '20px'
+          }}>
+            ตัวนับคลิก
+          </h2>
+          
+          <p style={{
+            fontSize: '16px',
+            color: '#666',
+            lineHeight: '1.6',
+            marginBottom: '30px'
+          }}>
+            คลิกปุ่มด้านล่างเพื่อเพิ่มจำนวนการนับ และทดสอบการทำงานของ React
+          </p>
           
           <button 
             onClick={() => setCount((count) => count + 1)}
@@ -191,29 +197,49 @@ function App() {
           </Link>
           
           <div style={{
-            padding: '15px',
-            backgroundColor: 'rgba(102, 126, 234, 0.1)',
-            borderRadius: '10px',
-            border: '1px solid rgba(102, 126, 234, 0.2)'
+            display: 'flex',
+            gap: '10px',
+            justifyContent: 'center'
           }}>
-            <p style={{
+            <button style={{
+              padding: '8px 16px',
+              background: 'linear-gradient(45deg, #ff6b6b, #ee5a24)',
+              color: 'white',
+              border: 'none',
+              borderRadius: '8px',
               fontSize: '14px',
-              color: '#666',
-              margin: '0',
-              lineHeight: '1.5'
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              boxShadow: '0 4px 8px rgba(0,0,0,0.2)'
             }}>
-              💡 <strong>เคล็ดลับ:</strong> แก้ไขไฟล์ 
-              <code style={{
-                backgroundColor: '#f0f0f0',
-                color: '#333',
-                padding: '2px 6px',
-                borderRadius: '4px',
-                fontSize: '12px'
-              }}>
-                src/App.tsx
-              </code> 
-              แล้วบันทึกเพื่อดู HMR ทำงาน
-            </p>
+              🔥 ปุ่มแดง
+            </button>
+            <button style={{
+              padding: '8px 16px',
+              background: 'linear-gradient(45deg, #2ecc71, #27ae60)',
+              color: 'white',
+              border: 'none',
+              borderRadius: '8px',
+              fontSize: '14px',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              boxShadow: '0 4px 8px rgba(0,0,0,0.2)'
+            }}>
+              ✅ ปุ่มเขียว
+            </button>
+            <button style={{
+              padding: '8px 16px',
+              background: 'linear-gradient(45deg, #3498db, #2980b9)',
+              color: 'white',
+              border: 'none',
+              borderRadius: '8px',
+              fontSize: '14px',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              boxShadow: '0 4px 8px rgba(0,0,0,0.2)'
+            }}>
+              💙 ปุ่มน้ำเงิน
+            </button>
           </div>
         </div>
         
@@ -234,7 +260,7 @@ function App() {
             justifyContent: 'center',
             gap: '10px'
           }}>
-            {['⚡ Vite', '⚛️ React 19', '🎨 Tailwind CSS v4', '📘 TypeScript'].map((tech, index) => (
+            {['⚡ Vite', '⚛️ React 19', '🎨 Tailwind CSS v4', '📘 TypeScript', '🧩 shadcn/ui'].map((tech, index) => (
               <span key={index} style={{
                 padding: '8px 16px',
                 backgroundColor: 'rgba(255, 255, 255, 0.2)',
