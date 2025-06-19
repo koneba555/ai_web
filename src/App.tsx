@@ -6,40 +6,229 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 flex flex-col items-center justify-center p-8">
-      <div className="flex space-x-8 mb-8">
-        <a href="https://vite.dev" target="_blank" className="transition-transform hover:scale-110">
-          <img src={viteLogo} className="h-24 w-24" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" className="transition-transform hover:scale-110">
-          <img src={reactLogo} className="h-24 w-24 animate-spin" alt="React logo" />
-        </a>
-      </div>
-      
-      <h1 className="text-5xl font-bold text-gray-800 dark:text-white mb-4 text-center">
-        สวัสดีโลก! 🌍
-      </h1>
-      
-      <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 text-center max-w-md">
-        ยินดีต้อนรับสู่ React App ของคุณ พร้อม Tailwind CSS v4
-      </p>
-      
-      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 max-w-md w-full">
-        <button 
-          onClick={() => setCount((count) => count + 1)}
-          className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 active:scale-95 shadow-lg"
-        >
-          คลิกแล้ว {count} ครั้ง
-        </button>
+    <div style={{
+      minHeight: '100vh',
+      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      padding: '40px 20px',
+      fontFamily: 'Arial, sans-serif'
+    }}>
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: '100vh',
+        maxWidth: '800px',
+        margin: '0 auto'
+      }}>
         
-        <p className="mt-6 text-gray-600 dark:text-gray-400 text-center">
-          แก้ไขไฟล์ <code className="bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded text-sm">src/App.tsx</code> แล้วบันทึกเพื่อทดสอบ Hot Module Replacement
-        </p>
+        {/* Logo section */}
+        <div style={{
+          display: 'flex',
+          gap: '30px',
+          marginBottom: '40px'
+        }}>
+          <a href="https://vite.dev" target="_blank" style={{ textDecoration: 'none' }}>
+            <div style={{
+              padding: '20px',
+              backgroundColor: 'rgba(255, 255, 255, 0.9)',
+              borderRadius: '15px',
+              boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
+              transition: 'all 0.3s ease',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}>
+              <img src={viteLogo} style={{ height: '60px', width: '60px' }} alt="Vite logo" />
+            </div>
+          </a>
+          <a href="https://react.dev" target="_blank" style={{ textDecoration: 'none' }}>
+            <div style={{
+              padding: '20px',
+              backgroundColor: 'rgba(255, 255, 255, 0.9)',
+              borderRadius: '15px',
+              boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
+              transition: 'all 0.3s ease',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}>
+              <img src={reactLogo} style={{ 
+                height: '60px', 
+                width: '60px',
+                animation: 'spin 6s linear infinite'
+              }} alt="React logo" />
+            </div>
+          </a>
+        </div>
+        
+        {/* Main content */}
+        <div style={{ textAlign: 'center', marginBottom: '40px' }}>
+          <h1 style={{
+            fontSize: '48px',
+            fontWeight: 'bold',
+            color: '#ffffff',
+            marginBottom: '20px',
+            textShadow: '0 4px 8px rgba(0,0,0,0.3)',
+            background: 'linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text'
+          }}>
+            สวัสดีโลก! 🌍
+          </h1>
+          
+          <p style={{
+            fontSize: '24px',
+            color: '#ffffff',
+            marginBottom: '15px',
+            textShadow: '0 2px 4px rgba(0,0,0,0.3)'
+          }}>
+            ยินดีต้อนรับสู่ <span style={{ fontWeight: 'bold', color: '#ffeb3b' }}>React App</span> ของคุณ
+          </p>
+          
+          <p style={{
+            fontSize: '18px',
+            color: 'rgba(255, 255, 255, 0.9)',
+            textShadow: '0 2px 4px rgba(0,0,0,0.3)'
+          }}>
+            พร้อม Tailwind CSS v4 และ TypeScript สำหรับประสบการณ์การพัฒนาที่ยอดเยี่ยม
+          </p>
+        </div>
+        
+        {/* Interactive card */}
+        <div style={{
+          backgroundColor: 'rgba(255, 255, 255, 0.95)',
+          borderRadius: '20px',
+          padding: '30px',
+          maxWidth: '400px',
+          width: '100%',
+          boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
+          textAlign: 'center',
+          backdropFilter: 'blur(10px)'
+        }}>
+          <div style={{ marginBottom: '25px' }}>
+            <div style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: '60px',
+              height: '60px',
+              background: 'linear-gradient(45deg, #667eea, #764ba2)',
+              borderRadius: '50%',
+              marginBottom: '15px',
+              color: 'white',
+              fontSize: '24px',
+              fontWeight: 'bold',
+              boxShadow: '0 8px 16px rgba(0,0,0,0.2)'
+            }}>
+              {count}
+            </div>
+            <h3 style={{
+              fontSize: '22px',
+              fontWeight: 'bold',
+              color: '#333',
+              margin: '0'
+            }}>
+              ตัวนับคลิก
+            </h3>
+          </div>
+          
+          <button 
+            onClick={() => setCount((count) => count + 1)}
+            style={{
+              width: '100%',
+              background: 'linear-gradient(45deg, #667eea, #764ba2)',
+              color: 'white',
+              fontWeight: 'bold',
+              fontSize: '18px',
+              padding: '15px 30px',
+              border: 'none',
+              borderRadius: '12px',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease',
+              boxShadow: '0 8px 16px rgba(0,0,0,0.2)',
+              marginBottom: '20px'
+            }}
+            onMouseOver={(e) => {
+              e.target.style.transform = 'translateY(-2px)';
+              e.target.style.boxShadow = '0 12px 24px rgba(0,0,0,0.3)';
+            }}
+            onMouseOut={(e) => {
+              e.target.style.transform = 'translateY(0)';
+              e.target.style.boxShadow = '0 8px 16px rgba(0,0,0,0.2)';
+            }}
+          >
+            คลิกที่นี่ ({count} ครั้ง)
+          </button>
+          
+          <div style={{
+            padding: '15px',
+            backgroundColor: 'rgba(102, 126, 234, 0.1)',
+            borderRadius: '10px',
+            border: '1px solid rgba(102, 126, 234, 0.2)'
+          }}>
+            <p style={{
+              fontSize: '14px',
+              color: '#666',
+              margin: '0',
+              lineHeight: '1.5'
+            }}>
+              💡 <strong>เคล็ดลับ:</strong> แก้ไขไฟล์ 
+              <code style={{
+                backgroundColor: '#f0f0f0',
+                color: '#333',
+                padding: '2px 6px',
+                borderRadius: '4px',
+                fontSize: '12px'
+              }}>
+                src/App.tsx
+              </code> 
+              แล้วบันทึกเพื่อดู HMR ทำงาน
+            </p>
+          </div>
+        </div>
+        
+        {/* Footer */}
+        <div style={{ marginTop: '40px', textAlign: 'center' }}>
+          <p style={{
+            fontSize: '16px',
+            color: 'rgba(255, 255, 255, 0.8)',
+            marginBottom: '20px',
+            textShadow: '0 2px 4px rgba(0,0,0,0.3)'
+          }}>
+            คลิกที่โลโก้ Vite และ React เพื่อเรียนรู้เพิ่มเติม
+          </p>
+          
+          <div style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+            gap: '10px'
+          }}>
+            {['⚡ Vite', '⚛️ React 19', '🎨 Tailwind CSS v4', '📘 TypeScript'].map((tech, index) => (
+              <span key={index} style={{
+                padding: '8px 16px',
+                backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                borderRadius: '20px',
+                border: '1px solid rgba(255, 255, 255, 0.3)',
+                color: 'white',
+                fontSize: '14px',
+                backdropFilter: 'blur(10px)'
+              }}>
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
       
-      <p className="mt-8 text-gray-500 dark:text-gray-400 text-center">
-        คลิกที่โลโก้ Vite และ React เพื่อเรียนรู้เพิ่มเติม
-      </p>
+      <style>{`
+        @keyframes spin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+      `}</style>
     </div>
   )
 }
