@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function Exchange() {
   const [thbAmount, setThbAmount] = useState('')
   const [usdAmount, setUsdAmount] = useState('')
-  const [exchangeRate, setExchangeRate] = useState(35.50) // อัตราแลกเปลี่ยนตัวอย่าง
+  const [exchangeRate] = useState(35.50) // อัตราแลกเปลี่ยนตัวอย่าง
 
   // คำนวณเงิน USD เมื่อกรอกเงินบาท
   useEffect(() => {
