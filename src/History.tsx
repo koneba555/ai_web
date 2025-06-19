@@ -81,17 +81,17 @@ function History() {
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'completed': return '#4caf50'
-      case 'pending': return '#ff9800'
-      case 'failed': return '#f44336'
-      default: return '#666'
+      case 'completed': return '#00A950'
+      case 'pending': return '#F59E0B'
+      case 'failed': return '#EF4444'
+      default: return '#6B7280'
     }
   }
 
   return (
     <div style={{
       minHeight: '100vh',
-      background: 'linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%)',
+      background: 'linear-gradient(135deg, #00A950 0%, #009947 100%)',
       padding: '20px',
       fontFamily: 'Arial, sans-serif'
     }}>
@@ -117,7 +117,7 @@ function History() {
               marginRight: '15px',
               textDecoration: 'none',
               fontSize: '24px',
-              color: '#1976d2'
+              color: '#FFFFFF'
             }}
           >
             ←
@@ -125,8 +125,9 @@ function History() {
           <h1 style={{
             fontSize: '24px',
             fontWeight: 'bold',
-            color: '#1976d2',
-            margin: '0'
+            color: '#FFFFFF',
+            margin: '0',
+            textShadow: '0 2px 4px rgba(0,0,0,0.3)'
           }}>
             Transaction History
           </h1>
@@ -134,11 +135,11 @@ function History() {
 
         {/* Filter Tabs */}
         <div style={{
-          backgroundColor: 'white',
+          backgroundColor: '#FFFFFF',
           borderRadius: '16px',
           padding: '8px',
           marginBottom: '20px',
-          boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+          boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
           display: 'flex',
           gap: '4px'
         }}>
@@ -153,8 +154,8 @@ function History() {
               style={{
                 flex: '1',
                 padding: '12px',
-                background: filter === tab.key ? '#2196f3' : 'transparent',
-                color: filter === tab.key ? 'white' : '#666',
+                background: filter === tab.key ? '#00A950' : 'transparent',
+                color: filter === tab.key ? 'white' : '#6B7280',
                 border: 'none',
                 borderRadius: '12px',
                 fontSize: '16px',
@@ -170,10 +171,10 @@ function History() {
 
         {/* Transaction List */}
         <div style={{
-          backgroundColor: 'white',
+          backgroundColor: '#FFFFFF',
           borderRadius: '16px',
           padding: '24px',
-          boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+          boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
           flex: '1'
         }}>
           <div style={{
@@ -185,7 +186,7 @@ function History() {
             <h3 style={{
               fontSize: '18px',
               fontWeight: 'bold',
-              color: '#1976d2',
+              color: '#111827',
               margin: '0'
             }}>
               {filter === 'all' ? 'All Transactions' : 
@@ -193,8 +194,8 @@ function History() {
             </h3>
             <span style={{
               fontSize: '14px',
-              color: '#666',
-              background: '#f5f5f5',
+              color: '#6B7280',
+              background: '#F5F7F8',
               padding: '4px 12px',
               borderRadius: '20px'
             }}>
@@ -217,15 +218,15 @@ function History() {
                   alignItems: 'center',
                   justifyContent: 'space-between',
                   padding: '16px',
-                  background: '#f8f9ff',
+                  background: '#F5F7F8',
                   borderRadius: '12px',
-                  border: '1px solid #e3f2fd',
+                  border: '1px solid #E5E7EB',
                   transition: 'all 0.3s ease',
                   cursor: 'pointer'
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-2px)'
-                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)'
+                  e.currentTarget.style.boxShadow = '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)'
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'translateY(0)'
@@ -237,8 +238,8 @@ function History() {
                     width: '40px',
                     height: '40px',
                     background: transaction.type === 'sent' 
-                      ? 'linear-gradient(45deg, #ffcdd2, #f8bbd9)' 
-                      : 'linear-gradient(45deg, #c8e6c9, #a5d6a7)',
+                      ? 'linear-gradient(45deg, #EF4444, #DC2626)' 
+                      : 'linear-gradient(45deg, #2bdb93, #5ce3aa)',
                     borderRadius: '50%',
                     display: 'flex',
                     alignItems: 'center',
@@ -251,14 +252,14 @@ function History() {
                     <p style={{
                       fontSize: '16px',
                       fontWeight: '600',
-                      color: '#333',
+                      color: '#111827',
                       margin: '0 0 2px 0'
                     }}>
                       {transaction.name}
                     </p>
                     <p style={{
                       fontSize: '14px',
-                      color: '#666',
+                      color: '#6B7280',
                       margin: '0 0 2px 0'
                     }}>
                       {transaction.username}
@@ -266,7 +267,7 @@ function History() {
                     {transaction.note && (
                       <p style={{
                         fontSize: '12px',
-                        color: '#888',
+                        color: '#9CA3AF',
                         margin: '0',
                         fontStyle: 'italic'
                       }}>
@@ -280,14 +281,14 @@ function History() {
                   <p style={{
                     fontSize: '16px',
                     fontWeight: '600',
-                    color: transaction.type === 'sent' ? '#f44336' : '#4caf50',
+                    color: transaction.type === 'sent' ? '#EF4444' : '#00A950',
                     margin: '0 0 2px 0'
                   }}>
                     {transaction.type === 'sent' ? '-' : '+'}${transaction.amount.toFixed(2)}
                   </p>
                   <p style={{
                     fontSize: '12px',
-                    color: '#666',
+                    color: '#6B7280',
                     margin: '0 0 2px 0'
                   }}>
                     {transaction.date} {transaction.time}
@@ -312,7 +313,7 @@ function History() {
             <div style={{
               textAlign: 'center',
               padding: '40px 20px',
-              color: '#666'
+              color: '#6B7280'
             }}>
               <div style={{ fontSize: '48px', marginBottom: '16px' }}>📋</div>
               <p style={{ fontSize: '16px', margin: '0' }}>
@@ -330,15 +331,15 @@ function History() {
         }}>
           <div style={{
             flex: '1',
-            backgroundColor: 'white',
+            backgroundColor: '#FFFFFF',
             borderRadius: '12px',
             padding: '16px',
-            boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+            boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
             textAlign: 'center'
           }}>
             <p style={{
               fontSize: '12px',
-              color: '#666',
+              color: '#6B7280',
               margin: '0 0 4px 0',
               textTransform: 'uppercase',
               fontWeight: '600'
@@ -348,7 +349,7 @@ function History() {
             <p style={{
               fontSize: '18px',
               fontWeight: 'bold',
-              color: '#f44336',
+              color: '#EF4444',
               margin: '0'
             }}>
               -${transactions
@@ -360,15 +361,15 @@ function History() {
           
           <div style={{
             flex: '1',
-            backgroundColor: 'white',
+            backgroundColor: '#FFFFFF',
             borderRadius: '12px',
             padding: '16px',
-            boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+            boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
             textAlign: 'center'
           }}>
             <p style={{
               fontSize: '12px',
-              color: '#666',
+              color: '#6B7280',
               margin: '0 0 4px 0',
               textTransform: 'uppercase',
               fontWeight: '600'
@@ -378,7 +379,7 @@ function History() {
             <p style={{
               fontSize: '18px',
               fontWeight: 'bold',
-              color: '#4caf50',
+              color: '#00A950',
               margin: '0'
             }}>
               +${transactions

@@ -17,7 +17,7 @@ function SendMoney() {
   return (
     <div style={{
       minHeight: '100vh',
-      background: 'linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%)',
+      background: 'linear-gradient(135deg, #00A950 0%, #009947 100%)',
       padding: '20px',
       fontFamily: 'Arial, sans-serif'
     }}>
@@ -43,7 +43,7 @@ function SendMoney() {
               marginRight: '15px',
               textDecoration: 'none',
               fontSize: '24px',
-              color: '#1976d2'
+              color: '#FFFFFF'
             }}
           >
             ←
@@ -51,8 +51,9 @@ function SendMoney() {
           <h1 style={{
             fontSize: '24px',
             fontWeight: 'bold',
-            color: '#1976d2',
-            margin: '0'
+            color: '#FFFFFF',
+            margin: '0',
+            textShadow: '0 2px 4px rgba(0,0,0,0.3)'
           }}>
             Send Money
           </h1>
@@ -60,16 +61,16 @@ function SendMoney() {
 
         {/* Amount Input */}
         <div style={{
-          backgroundColor: 'white',
+          backgroundColor: '#FFFFFF',
           borderRadius: '16px',
           padding: '24px',
           marginBottom: '20px',
-          boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+          boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)',
           textAlign: 'center'
         }}>
           <p style={{
             fontSize: '16px',
-            color: '#666',
+            color: '#6B7280',
             margin: '0 0 16px 0'
           }}>
             Amount to Send
@@ -83,7 +84,7 @@ function SendMoney() {
             <span style={{
               fontSize: '36px',
               fontWeight: 'bold',
-              color: '#1976d2',
+              color: '#00A950',
               marginRight: '8px'
             }}>
               $
@@ -96,7 +97,7 @@ function SendMoney() {
               style={{
                 fontSize: '36px',
                 fontWeight: 'bold',
-                color: '#1976d2',
+                color: '#00A950',
                 border: 'none',
                 outline: 'none',
                 background: 'transparent',
@@ -116,8 +117,8 @@ function SendMoney() {
                 onClick={() => setAmount(preset)}
                 style={{
                   padding: '8px 16px',
-                  background: amount === preset ? '#2196f3' : '#f5f5f5',
-                  color: amount === preset ? 'white' : '#666',
+                  background: amount === preset ? '#00A950' : '#F5F7F8',
+                  color: amount === preset ? 'white' : '#6B7280',
                   border: 'none',
                   borderRadius: '20px',
                   fontSize: '14px',
@@ -133,16 +134,16 @@ function SendMoney() {
 
         {/* Recent Contacts */}
         <div style={{
-          backgroundColor: 'white',
+          backgroundColor: '#FFFFFF',
           borderRadius: '16px',
           padding: '24px',
           marginBottom: '20px',
-          boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
+          boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)'
         }}>
           <h3 style={{
             fontSize: '18px',
             fontWeight: 'bold',
-            color: '#1976d2',
+            color: '#111827',
             margin: '0 0 16px 0'
           }}>
             Recent Contacts
@@ -161,12 +162,12 @@ function SendMoney() {
                 }}
                 style={{
                   padding: '16px',
-                  border: selectedContact === contact.id ? '2px solid #2196f3' : '2px solid #f0f0f0',
+                  border: selectedContact === contact.id ? '2px solid #00A950' : '2px solid #E5E7EB',
                   borderRadius: '12px',
                   cursor: 'pointer',
                   textAlign: 'center',
                   transition: 'all 0.3s ease',
-                  background: selectedContact === contact.id ? '#f3f8ff' : 'white'
+                  background: selectedContact === contact.id ? '#e6f6ee' : '#FFFFFF'
                 }}
               >
                 <div style={{
@@ -178,14 +179,14 @@ function SendMoney() {
                 <p style={{
                   fontSize: '14px',
                   fontWeight: '600',
-                  color: '#333',
+                  color: '#111827',
                   margin: '0 0 4px 0'
                 }}>
                   {contact.name.split(' ')[0]}
                 </p>
                 <p style={{
                   fontSize: '12px',
-                  color: '#666',
+                  color: '#6B7280',
                   margin: '0'
                 }}>
                   {contact.username}
@@ -197,16 +198,16 @@ function SendMoney() {
 
         {/* Recipient Input */}
         <div style={{
-          backgroundColor: 'white',
+          backgroundColor: '#FFFFFF',
           borderRadius: '16px',
           padding: '24px',
           marginBottom: '20px',
-          boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
+          boxShadow: '0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1)'
         }}>
           <label style={{
             fontSize: '16px',
             fontWeight: '600',
-            color: '#333',
+            color: '#111827',
             display: 'block',
             marginBottom: '8px'
           }}>
@@ -220,21 +221,21 @@ function SendMoney() {
             style={{
               width: '100%',
               padding: '12px',
-              border: '2px solid #f0f0f0',
+              border: '2px solid #E5E7EB',
               borderRadius: '8px',
               fontSize: '16px',
               outline: 'none',
               marginBottom: '16px',
               transition: 'border-color 0.3s ease'
             }}
-            onFocus={(e) => e.target.style.borderColor = '#2196f3'}
-            onBlur={(e) => e.target.style.borderColor = '#f0f0f0'}
+            onFocus={(e) => e.target.style.borderColor = '#00A950'}
+            onBlur={(e) => e.target.style.borderColor = '#E5E7EB'}
           />
           
           <label style={{
             fontSize: '16px',
             fontWeight: '600',
-            color: '#333',
+            color: '#111827',
             display: 'block',
             marginBottom: '8px'
           }}>
@@ -248,14 +249,14 @@ function SendMoney() {
             style={{
               width: '100%',
               padding: '12px',
-              border: '2px solid #f0f0f0',
+              border: '2px solid #E5E7EB',
               borderRadius: '8px',
               fontSize: '16px',
               outline: 'none',
               transition: 'border-color 0.3s ease'
             }}
-            onFocus={(e) => e.target.style.borderColor = '#2196f3'}
-            onBlur={(e) => e.target.style.borderColor = '#f0f0f0'}
+            onFocus={(e) => e.target.style.borderColor = '#00A950'}
+            onBlur={(e) => e.target.style.borderColor = '#E5E7EB'}
           />
         </div>
 
@@ -271,9 +272,9 @@ function SendMoney() {
             style={{
               flex: '1',
               padding: '16px',
-              background: 'white',
-              color: '#666',
-              border: '2px solid #f0f0f0',
+              background: '#FFFFFF',
+              color: '#6B7280',
+              border: '2px solid #E5E7EB',
               borderRadius: '12px',
               fontSize: '16px',
               fontWeight: '600',
@@ -290,8 +291,8 @@ function SendMoney() {
               flex: '2',
               padding: '16px',
               background: (!amount || !recipient) 
-                ? '#ccc' 
-                : 'linear-gradient(45deg, #2196f3, #1976d2)',
+                ? '#9CA3AF' 
+                : 'linear-gradient(45deg, #00A950, #009947)',
               color: 'white',
               border: 'none',
               borderRadius: '12px',
@@ -301,7 +302,7 @@ function SendMoney() {
               transition: 'all 0.3s ease',
               boxShadow: (!amount || !recipient) 
                 ? 'none' 
-                : '0 4px 12px rgba(33, 150, 243, 0.3)'
+                : '0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1)'
             }}
           >
             Send ${amount || '0.00'}
